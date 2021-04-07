@@ -41,7 +41,7 @@ export default function UserList() {
             <Thead>
               <Tr>
                 <Th paddingX="6" color="gray.300" width="8">
-                  <Checkbox colorSchema="pink" />
+                  <Checkbox colorScheme="pink" />
                 </Th>
                 <Th>Usuário</Th>
                 <Th>Data de cadastro</Th>
@@ -52,7 +52,7 @@ export default function UserList() {
             <Tbody>
               <Tr>
                 <Td paddingX="6">
-                  <Checkbox colorSchema="pink" />
+                  <Checkbox colorScheme="pink" />
                 </Td>
                 <Td>
                   <Text fontWeight="bold">Gabriel Buzzi</Text>
