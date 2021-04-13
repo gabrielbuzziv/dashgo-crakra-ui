@@ -1,3 +1,4 @@
+import Head from 'next/Head';
 import dynamic from 'next/dynamic';
 import { Box, Flex, Text, SimpleGrid, theme } from '@chakra-ui/react';
 import { Header } from '../components/Header';
@@ -60,48 +61,54 @@ const series = [
 
 export default function Dashboard() {
   return (
-    <Flex
-      direction="column"
-      height="100vh"
-    >
-      <Header />
+    <>
+      <Head>
+        <title>Dashbord | dashgo.</title>
+      </Head>
 
       <Flex
-        width="100%"
-        marginY="6"
-        maxWidth={1480}
-        marginX="auto"
-        paddingX="6"
+        direction="column"
+        height="100vh"
       >
-        <Sidebar />
+        <Header />
 
-        <SimpleGrid
-          flex="1"
-          gap="4"
-          minChildWidth="320px"
-          alignItems="flex-start"
+        <Flex
+          width="100%"
+          marginY="6"
+          maxWidth={1480}
+          marginX="auto"
+          paddingX="6"
         >
-          <Box
-            padding="8"
-            background="gray.800"
-            borderRadius={8}
-            // paddingBottom="4"
-          >
-            <Text fontSize="lg" marginBottom="4">Inscritos da semana</Text>
-            <Chart options={options} series={series} type="area" height={160} />
-          </Box>
+          <Sidebar />
 
-          <Box
-            padding="8"
-            background="gray.800"
-            borderRadius={8}
-            // paddingBottom="4"
+          <SimpleGrid
+            flex="1"
+            gap="4"
+            minChildWidth="320px"
+            alignItems="flex-start"
           >
-            <Text fontSize="lg" marginBottom="4">Taxa de abertura</Text>
-            <Chart options={options} series={series} type="area" height={160} />
-          </Box>
-        </SimpleGrid>
+            <Box
+              padding={["6", "8"]}
+              background="gray.800"
+              borderRadius={8}
+              paddingBottom="4"
+            >
+              <Text fontSize="lg" marginBottom="4">Inscritos da semana</Text>
+              <Chart options={options} series={series} type="area" height={160} />
+            </Box>
+
+            <Box
+              padding="8"
+              background="gray.800"
+              borderRadius={8}
+              paddingBottom="4"
+            >
+              <Text fontSize="lg" marginBottom="4">Taxa de abertura</Text>
+              <Chart options={options} series={series} type="area" height={160} />
+            </Box>
+          </SimpleGrid>
+        </Flex>
       </Flex>
-    </Flex>
+    </>
   )
 }
