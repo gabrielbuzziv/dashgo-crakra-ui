@@ -23,6 +23,7 @@ export function Header() {
       height="20"
       marginX="auto"
       marginTop="4"
+      marginBottom="4"
       paddingX="6"
       alignItems="center"
     >
@@ -35,14 +36,14 @@ export function Header() {
           onClick={onOpen}
           marginRight="2"
         >
-          
+
         </IconButton>
       )}
 
       <Logo />
-      
-      { isWideVersion && <SearchBox /> }
-      
+
+      { isWideVersion && <SearchBox />}
+
       <Flex alignItems="center" marginLeft="auto">
         <NotificationsNav />
         <Profile showProfileData={isWideVersion} />
